@@ -4,9 +4,6 @@ package com.bridgelabz;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
-
-import static javafx.application.Platform.exit;
-
 public class AddressBook
 {
     List<Contact> contactList =new ArrayList<>();
@@ -112,11 +109,9 @@ public class AddressBook
                             break;
                         case 9:
                             System.out.println("Back to main menu option");
-                            exit();
                             break;
                         default:
                             System.out.println("Invalid Key Options");
-                            exit();
                             break;
                     }
                     System.out.println("\n 1. firstName \t 2. lastName 3. address \n 4. city \t\t 5. state \t 6. phoneNumber \n 7. zipCode \t 8. email \t 9. Back");
@@ -124,6 +119,22 @@ public class AddressBook
                     editOptions = inputDetails.nextInt();
                 } while (editOptions != 9);
             }
+        }
+    }
+    public void deleteContact()
+    {
+        String checkFirstName=inputDetails.next();
+        System.out.print("Enter contact's First Name you want to delete:");
+        for (Contact contact:contactList)
+        {
+            if(contact.getFirstName().equals(checkFirstName))
+            {
+                contactList.remove(contact);
+                System.out.println("\nPerson '" + contact.getFirstName() + "' Deleted in the contact List\n");
+                break;
+            }
+            else
+                System.out.println("Contact not found in a list");
         }
     }
 }
