@@ -28,6 +28,7 @@ public class AddressBookMain
                     break;
                 case 3 :
                     System.out.println("Delete person contact list");
+                    System.out.println("Enter the details of contact person");
                     addressBookObject.deleteContact();
                     break;
                 case 4 :
