@@ -10,7 +10,6 @@ public class AddressBook
     Scanner inputDetails = new Scanner(System.in);
     public void getContact()
     {
-        System.out.println("Enter the details of contact person");
         System.out.print("Enter First name : ");
         String firstName=inputDetails.nextLine();
         System.out.print("Enter Last name : ");
