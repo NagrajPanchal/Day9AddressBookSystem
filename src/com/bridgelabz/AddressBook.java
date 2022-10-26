@@ -1,38 +1,41 @@
-// UC-3 Edit contacts Details in Address Book System
+// UC-5 Add multiple Person To Address Book
 
 package com.bridgelabz;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 
-import static javafx.application.Platform.exit;
-
 public class AddressBook
 {
     List<Contact> contactList =new ArrayList<>();
     Scanner inputDetails = new Scanner(System.in);
-    public void getContact()
+    public void getContact ()
     {
-        System.out.println("Enter the details of contact person");
-        System.out.print("Enter First name : ");
-        String firstName=inputDetails.nextLine();
-        System.out.print("Enter Last name : ");
-        String lastName=inputDetails.nextLine();
-        System.out.print("Enter Address : ");
-        String address=inputDetails.nextLine();
-        System.out.print("Enter City name : ");
-        String city=inputDetails.nextLine();
-        System.out.print("Enter State name : ");
-        String state=inputDetails.nextLine();
-        System.out.print("Enter zip-Code : ");
-        String zipCode=inputDetails.nextLine();
-        System.out.print("Enter Phone Number : ");
-        String phoneNumber=inputDetails.nextLine();
-        System.out.print("Enter Email ID : ");
-        String email=inputDetails.nextLine();
-        Contact contact =new Contact(firstName,lastName,address,city,state,zipCode,phoneNumber,email);
-        contactList.add(contact);
-        System.out.println("Person '"+firstName+"' details inserted in contact List");
+    System.out.print("Enter Number of times add contact details : ");
+    int numberOfTimesAddContacts = inputDetails.nextInt();
+    for(int i=0; i<numberOfTimesAddContacts;i++)
+    {
+            System.out.println("Enter the details of contact person");
+            System.out.print("Enter First name : ");
+            String firstName = inputDetails.nextLine();
+            System.out.print("Enter Last name : ");
+            String lastName = inputDetails.nextLine();
+            System.out.print("Enter Address : ");
+            String address = inputDetails.nextLine();
+            System.out.print("Enter City name : ");
+            String city = inputDetails.nextLine();
+            System.out.print("Enter State name : ");
+            String state = inputDetails.nextLine();
+            System.out.print("Enter zip-Code : ");
+            String zipCode = inputDetails.nextLine();
+            System.out.print("Enter Phone Number : ");
+            String phoneNumber = inputDetails.nextLine();
+            System.out.print("Enter Email ID : ");
+            String email = inputDetails.nextLine();
+            Contact contact = new Contact(firstName, lastName, address, city, state, zipCode, phoneNumber, email);
+            contactList.add(contact);
+            System.out.println("Person '" + firstName + "' details inserted in contact List");
+        }
     }
     public void editContact()
     {
@@ -112,11 +115,9 @@ public class AddressBook
                             break;
                         case 9:
                             System.out.println("Back to main menu option");
-                            exit();
                             break;
                         default:
                             System.out.println("Invalid Key Options");
-                            exit();
                             break;
                     }
                     System.out.println("\n 1. firstName \t 2. lastName 3. address \n 4. city \t\t 5. state \t 6. phoneNumber \n 7. zipCode \t 8. email \t 9. Back");

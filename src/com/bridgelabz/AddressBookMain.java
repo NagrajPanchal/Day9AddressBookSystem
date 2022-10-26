@@ -1,11 +1,7 @@
-// UC-3 Edit contacts Person Details in Address Book System
-
+// UC-5 Add multiple Person To Address Book
 package com.bridgelabz;
 
 import java.util.Scanner;
-
-import static javafx.application.Platform.exit;
-
 public class AddressBookMain
 {
     public void switchOptions()
@@ -34,11 +30,9 @@ public class AddressBookMain
                     break;
                 case 4 :
                     System.out.println("Back from the Options");
-                    exit();
                     break;
                 default:
                     System.out.println("Invalid Key Options");
-                    exit();
                     break;
             }System.out.println("\n 1. Add \t 2. Edit \n 3. Print \t 4. Exit");
             System.out.print("Choose your options : ");
