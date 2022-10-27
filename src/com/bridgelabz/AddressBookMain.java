@@ -1,4 +1,5 @@
-// UC-5 Add multiple Person To Address Book
+// UC-6 Add multiple Address Book to the System. Each Address Book has a unique Name
+
 package com.bridgelabz;
 
 import java.util.Scanner;
@@ -48,9 +49,19 @@ public class AddressBookMain
     }
     public static void main(String[] args)
     {
+        String address;
         System.out.println("-:*@*  Wel-Come to Address book systems  *@*:-");
+        System.out.print("Enter Address Book Name : ");
+        Scanner inputAddress = new Scanner(System.in);
+        address = inputAddress.nextLine();
+        System.out.println("Address Book Name : "+address);
         System.out.println("Create Contacts Details");
-        AddressBookMain addressBookMainObject = new AddressBookMain();
-        addressBookMainObject.switchOptions();
+        AddressBookMain addressBookMainObject1 = new AddressBookMain();
+        addressBookMainObject1.switchOptions();
+        AddressBookMain addressBookMainObject2 = new AddressBookMain();
+        addressBookMainObject2.switchOptions();
+        AddressBookMain addressBookMainObject3 = new AddressBookMain();
+        addressBookMainObject3.switchOptions();
+
     }
 }
