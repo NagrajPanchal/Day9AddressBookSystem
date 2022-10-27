@@ -34,26 +34,7 @@ public class AddressBook
             Contact contact = new Contact(firstName, lastName, address, city, state, zipCode, phoneNumber, email);
             contactList.add(contact);
             System.out.println("Person '" + firstName + "' details inserted in contact List");
-        }
-        System.out.print("Enter First name : ");
-        String firstName=inputDetails.nextLine();
-        System.out.print("Enter Last name : ");
-        String lastName=inputDetails.nextLine();
-        System.out.print("Enter Address : ");
-        String address=inputDetails.nextLine();
-        System.out.print("Enter City name : ");
-        String city=inputDetails.nextLine();
-        System.out.print("Enter State name : ");
-        String state=inputDetails.nextLine();
-        System.out.print("Enter zip-Code : ");
-        String zipCode=inputDetails.nextLine();
-        System.out.print("Enter Phone Number : ");
-        String phoneNumber=inputDetails.nextLine();
-        System.out.print("Enter Email ID : ");
-        String email=inputDetails.nextLine();
-        Contact contact =new Contact(firstName,lastName,address,city,state,zipCode,phoneNumber,email);
-        contactList.add(contact);
-        System.out.println("Person '"+firstName+"' details inserted in contact List");
+    }
     }
     public void editContact()
     {
