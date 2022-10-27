@@ -8,7 +8,7 @@ public class AddressBookMain
     {
         AddressBook addressBookObject = new AddressBook();
         Scanner scanner = new Scanner(System.in);
-        System.out.println(" 1. Add \t 2. Edit \n 3. Print \t 4. Exit");
+        System.out.println("\n 1. Add \t 2. Edit \t 3. Delete \n 4. Print \t 5. Exit");
         System.out.print("Choose your options : ");
         int options = scanner.nextInt();
         do
@@ -25,19 +25,25 @@ public class AddressBookMain
                     addressBookObject.editContact();
                     break;
                 case 3 :
+                    System.out.println("Delete person contact list");
+                    System.out.println("Enter the details of contact person");
+                    addressBookObject.deleteContact();
+                    break;
+                case 4 :
                     System.out.println("Print Person Details");
                     System.out.println(addressBookObject.contactList);
                     break;
-                case 4 :
+                case 5 :
                     System.out.println("Back from the Options");
                     break;
                 default:
                     System.out.println("Invalid Key Options");
                     break;
-            }System.out.println("\n 1. Add \t 2. Edit \n 3. Print \t 4. Exit");
+            }
+            System.out.println("\n 1. Add \t 2. Edit \t 3. Delete \n 4. Print \t 5. Exit");
             System.out.print("Choose your options : ");
             options = scanner.nextInt();
-        }while (options != 4);
+        }while (options != 5);
     }
     public static void main(String[] args)
     {

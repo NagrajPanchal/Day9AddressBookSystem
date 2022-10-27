@@ -1,4 +1,4 @@
-// UC-5 Add multiple Person To Address Book
+// UC-5 Add multiple Person to Address Book
 
 package com.bridgelabz;
 import java.util.Scanner;
@@ -125,6 +125,22 @@ public class AddressBook
                     editOptions = inputDetails.nextInt();
                 } while (editOptions != 9);
             }
+        }
+    }
+    public void deleteContact()
+    {
+        String checkFirstName=inputDetails.next();
+        System.out.print("Enter contact's First Name you want to delete:");
+        for (Contact contact:contactList)
+        {
+            if(contact.getFirstName().equals(checkFirstName))
+            {
+                contactList.remove(contact);
+                System.out.println("\nPerson '" + contact.getFirstName() + "' Deleted in the contact List\n");
+                break;
+            }
+            else
+                System.out.println("Contact not found in a list");
         }
     }
 }
