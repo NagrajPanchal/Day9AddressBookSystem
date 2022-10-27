@@ -2,6 +2,7 @@
 package com.bridgelabz;
 
 import java.util.Scanner;
+
 public class AddressBookMain
 {
     public void switchOptions()
