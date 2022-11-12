@@ -1,12 +1,14 @@
 // UC-6 Add multiple Address Book to the System. Each Address Book has a unique Name
 
 package com.bridgelabz;
+import java.util.HashMap;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 public class AddressBook
 {
     List<Contact> contactList =new ArrayList<>();
+    HashMap<String, AddressBook> addressBooks = new HashMap<>();
     Scanner inputDetails = new Scanner(System.in);
     public void getContact ()
     {
@@ -61,6 +63,10 @@ public class AddressBook
                 System.out.print("Edit you Email ID : ");
                 contact.setEmail(inputDetails.next());
                 System.out.println("\nPerson '" + contact.getFirstName() + "' details Edited in the contact List\n");
+            }
+            else
+            {
+                System.out.println("Contact not found with this name ");
             }
         }
     }
