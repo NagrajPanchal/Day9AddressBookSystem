@@ -9,17 +9,31 @@ public class AddressBookMain
     public void switchOptions()
     {
         AddressBook addressBookObject = new AddressBook();
-        Scanner scanner = new Scanner(System.in);
+        AddressBook book2 = new AddressBook();
+        AddressBook book3 = new AddressBook();
+        AddressBook book4 = new AddressBook();
+        addressBookObject.addressBooks.put("AddressBook1",addressBookObject);
+        addressBookObject.addressBooks.put("AddressBook2", book2);
+        addressBookObject.addressBooks.put("AddressBook3", book3);
+        addressBookObject.addressBooks.put("AddressBook4", book4);
+        Scanner inputChoice = new Scanner(System.in);
         System.out.println("\n 1. Add \t 2. Edit \t 3. Delete \n 4. Print \t 5. Exit");
         System.out.print("Choose your options : ");
-        int options = scanner.nextInt();
+        int options = inputChoice.nextInt();
         do
         {
             switch (options)
             {
                 case 1 :
-                    System.out.println("Add Person Details ");
-                    addressBookObject.getContact();
+                    System.out.println("Enter:\n1:Ramayana \t\t2:Mahabharath \n3:BhagawathGeetha \t4:Kaliyuga");
+                    int chooseAddressBook=inputChoice.nextInt();
+                    if(chooseAddressBook==1){addressBookObject.getContact();}
+                    else if(chooseAddressBook==2){book2.getContact();}
+                    else if(chooseAddressBook==3){book3.getContact();}
+                    else if(chooseAddressBook==4){book4.getContact();}
+                    else {
+                        System.out.println("Option not found");
+                    }
                     break;
                 case 2 :
                     System.out.println("Edit Person contact details");
@@ -44,7 +58,7 @@ public class AddressBookMain
             }
             System.out.println("\n 1. Add \t 2. Edit \t 3. Delete \n 4. Print \t 5. Exit");
             System.out.print("Choose your options : ");
-            options = scanner.nextInt();
+            options = inputChoice.nextInt();
         }while (options != 5);
     }
     public static void main(String[] args)
@@ -56,12 +70,7 @@ public class AddressBookMain
         address = inputAddress.nextLine();
         System.out.println("Address Book Name : "+address);
         System.out.println("Create Contacts Details");
-        AddressBookMain addressBookMainObject1 = new AddressBookMain();
-        addressBookMainObject1.switchOptions();
-        AddressBookMain addressBookMainObject2 = new AddressBookMain();
-        addressBookMainObject2.switchOptions();
-        AddressBookMain addressBookMainObject3 = new AddressBookMain();
-        addressBookMainObject3.switchOptions();
-
+        AddressBookMain addressBookMainObject = new AddressBookMain();
+        addressBookMainObject.switchOptions();
     }
 }
