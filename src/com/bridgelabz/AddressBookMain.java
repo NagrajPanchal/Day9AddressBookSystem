@@ -1,4 +1,4 @@
-// UC-6 Add multiple Address Book to the System. Each Address Book has a unique Name
+// UC-7 Ensure there is no Duplicate Entry of the same Person in a particular Address Book
 
 package com.bridgelabz;
 
@@ -25,7 +25,7 @@ public class AddressBookMain
             switch (options)
             {
                 case 1 :
-                    System.out.println("Enter:\n1:Ramayana \t\t2:Mahabharath \n3:BhagawathGeetha \t4:Kaliyuga");
+                    System.out.println("Enter:\n1:AddressBook1 \t\t2:AddressBook2 \n3:AddressBook3 \t4:AddressBook4");
                     int chooseAddressBook=inputChoice.nextInt();
                     if(chooseAddressBook==1){addressBookObject.getContact();}
                     else if(chooseAddressBook==2){book2.getContact();}

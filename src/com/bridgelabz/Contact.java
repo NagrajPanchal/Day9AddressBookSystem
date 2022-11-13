@@ -1,4 +1,4 @@
-// UC-6 Add multiple Address Book to the System. Each Address Book has a unique Name
+// UC-7 Ensure there is no Duplicate Entry of the same Person in a particular Address Book
 
 package com.bridgelabz;
 

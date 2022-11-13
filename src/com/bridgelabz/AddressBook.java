@@ -1,4 +1,4 @@
-// UC-6 Add multiple Address Book to the System. Each Address Book has a unique Name
+// UC-7 Ensure there is no Duplicate Entry of the same Person in a particular Address Book
 
 package com.bridgelabz;
 import java.util.HashMap;
@@ -10,6 +10,13 @@ public class AddressBook
     List<Contact> contactList =new ArrayList<>();
     HashMap<String, AddressBook> addressBooks = new HashMap<>();
     Scanner inputDetails = new Scanner(System.in);
+    //Adding Contacts using addContact method in the arraylist of address book and checking duplicates entry
+    public boolean duplicateEntry(String firstname, Contact contact) {
+        for (Contact contactObject : this.contactList)
+            if (contactObject.getFirstName().equals(firstname))
+                return true;
+        return false;
+    }
     public void getContact ()
     {
     System.out.print("Enter Number of times add contact details : ");
@@ -33,9 +40,17 @@ public class AddressBook
             String phoneNumber = inputDetails.nextLine();
             System.out.print("Enter Email ID : ");
             String email = inputDetails.nextLine();
-            Contact contact = new Contact(firstName, lastName, address, city, state, zipCode, phoneNumber, email);
-            contactList.add(contact);
+            Contact contact1 = new Contact(firstName, lastName, address, city, state, zipCode, phoneNumber, email);
+        boolean isDuplicate = duplicateEntry(contact1.getFirstName(), contact1);
+        if (!isDuplicate)
+        {
+            contactList.add(contact1);
             System.out.println("Person '" + firstName + "' details inserted in contact List");
+        }
+        else
+        {
+            System.out.println("Person '" + firstName + "' Already exist in contact List");
+        }
     }
     }
     public void editContact()
